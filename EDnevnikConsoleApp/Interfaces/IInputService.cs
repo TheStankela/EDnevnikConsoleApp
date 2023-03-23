@@ -4,6 +4,6 @@ namespace EDnevnikConsoleApp.Interfaces
 {
     public interface IInputService
     {
-        bool StudentInput();
+        void StudentInput();
     }
 }

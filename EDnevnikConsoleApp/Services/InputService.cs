@@ -17,7 +17,7 @@ namespace EDnevnikConsoleApp.Services
 			_studentRepository = studentRepository;
 		}
 
-		public bool StudentInput()
+		public void StudentInput()
 		{
 			Console.WriteLine("Enter students Firstname and Lastname (Add \",\" between if adding multiple)");
 			string enteredStudent = Console.ReadLine();
@@ -38,18 +38,13 @@ namespace EDnevnikConsoleApp.Services
 					string[] splitStudentInfo = trimmedItem.Split(" ");
 					
 					
-					
 					Student studentMapped = new(splitStudentInfo[0], splitStudentInfo[1]);
 					students.Add(studentMapped);
 				}
 			}
 
-			if (!_studentRepository.AddStudents(students)){
-				Console.WriteLine("Something went wrong");
-				return false;
-			}
-			Console.WriteLine("Student(s) added successfully!");
-			return true;
+			_studentRepository.AddStudents(students);
+
 		}
 
 	}

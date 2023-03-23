@@ -16,9 +16,21 @@ namespace EDnevnikConsoleApp.IoC
 		{
 			return new StudentRepository();
 		}
-		public static IInputService CreateNewInputService()
+		public static IInputService CreateInputService()
 		{
 			return new InputService(CreateStudentRepository());
+		}
+		public static IGradeRepository CreateGradeRepository()
+		{
+			return new GradeRepository(CreateStudentRepository());
+		}
+		public static ISubjectRepository CreateSubjectRepository()
+		{
+			return new SubjectRepository();
+		}
+		public static IGradeService CreateGradeService()
+		{
+			return new GradeService(CreateStudentRepository(), CreateSubjectRepository(), CreateGradeRepository());
 		}
 	}
 }

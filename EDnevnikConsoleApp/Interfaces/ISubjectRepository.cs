@@ -10,5 +10,6 @@ namespace EDnevnikConsoleApp.Interfaces
 	public interface ISubjectRepository
 	{
 		public void GetAllSubjects();
+		public Subject GetSubjectById(int id);
 	}
 }

@@ -18,5 +18,10 @@ namespace EDnevnikConsoleApp.Repository
 				Console.WriteLine($"{subject.Id} - {subject.Name}");
 			}
 		}
+
+		public Subject? GetSubjectById(int id)
+		{
+			return Database.Subjects.FirstOrDefault(x => x.Id == id);
+		}
 	}
 }

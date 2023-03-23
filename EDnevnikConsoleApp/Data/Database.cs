@@ -9,6 +9,15 @@ namespace EDnevnikConsoleApp.Data
 {
 	public static class Database
 	{
+		public static Dictionary<double, string> gradeName = new Dictionary<double, string>()
+		{
+			{1, "Nedovoljan" },
+			{2, "Dovoljan" },
+			{3, "Dobar" },
+			{4, "Vrlo Dobar" },
+			{5, "Odlican" }
+
+		};
 		public static List<Subject> Subjects = new List<Subject>
 		{
 			new Subject(1, "Algebra"),
@@ -17,10 +26,7 @@ namespace EDnevnikConsoleApp.Data
 			new Subject(4, "Srpski Jezik"),
 			new Subject(5, "Engleski Jezik"),
 		};
-		public static List<Student> Students = new List<Student>
-		{
-			new Student("Marko", "Markovic")
-		};
+		public static List<Student> Students = new List<Student>();
 		public static List<Grade> Grades = new List<Grade>();
 	}
 }

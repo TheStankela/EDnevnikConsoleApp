@@ -11,26 +11,35 @@ namespace EDnevnikConsoleApp.Repository
 {
 	public class StudentRepository : IStudentRepository
 	{
-        public bool AddStudents(List<Student> students)
+        public void AddStudents(List<Student> students)
 		{
 			foreach(var student in students)
 			{
-				Database.Students.Add(student);
+				if (!Database.Students.Any(s => s.FirstName == student.FirstName && s.LastName == student.LastName))
+				{
+					Database.Students.Add(student);
+                    Console.WriteLine($"{student.FirstName} {student.LastName} succesfully added.");
+                }
+				else
+				{
+                    Console.WriteLine($"{student.FirstName} {student.LastName} already exists.");
+                }
 			}
-			return true;
 		}
 
 		public void GetAllStudents()
 		{
 			foreach (Student s in Database.Students)
 			{
-				Console.WriteLine(s.FirstName);
+				Console.WriteLine($"{s.Id} {s.FirstName} {s.LastName}");
 			}
 		}
 
-		public Student GetStudent(string indexNumber)
+		public Student? GetStudent(int id)
 		{
-			throw new NotImplementedException();
+			var student = Database.Students.FirstOrDefault(s => s.Id == id);
+			
+			return student;
 		}
 	}
 }

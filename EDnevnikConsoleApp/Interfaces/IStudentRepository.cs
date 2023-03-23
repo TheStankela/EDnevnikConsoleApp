@@ -11,7 +11,7 @@ namespace EDnevnikConsoleApp.Interfaces
     public interface IStudentRepository
     {
 		void GetAllStudents();
-		Student GetStudent(string indexNumber);
-		bool AddStudents(List<Student> students);
+		Student GetStudent(int id);
+		void AddStudents(List<Student> students);
 	}
 }
