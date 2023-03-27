@@ -9,13 +9,14 @@ namespace EDnevnikConsoleApp.Models
 {
 	public class Student
 	{
-        public Student(string firstName, string lastName)
+        public Student(int? id, string firstName, string lastName)
         {
-			Id = GenerateStudentId();
+			if (id == null) { Id = GenerateStudentId(); }
+			else { Id = id; }
 			FirstName = firstName;
 			LastName = lastName;
         }
-		public int Id { get; set; }
+		public int? Id { get; set; }
 		public string FirstName { get; set; }
 		public string LastName { get; set; }
 		public List<Grade>? Grades { get; set; }

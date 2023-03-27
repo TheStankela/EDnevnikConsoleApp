@@ -27,7 +27,7 @@ namespace EDnevnikConsoleApp.Services
 			if (!enteredStudent.Contains(", "))
 			{
 				studentParsed = enteredStudent.Split(" ");
-				students.Add(new(studentParsed[0], studentParsed[1]));
+				//students.Add(new(studentParsed[0], studentParsed[1]));
 			}
 			else
 			{
@@ -38,8 +38,8 @@ namespace EDnevnikConsoleApp.Services
 					string[] splitStudentInfo = trimmedItem.Split(" ");
 					
 					
-					Student studentMapped = new(splitStudentInfo[0], splitStudentInfo[1]);
-					students.Add(studentMapped);
+					//Student studentMapped = new(splitStudentInfo[0], splitStudentInfo[1]);
+					//students.Add(studentMapped);
 				}
 			}
 
